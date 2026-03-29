@@ -1,11 +1,1 @@
-# x) Lue ja tiivistä
-dawd
 
-# a) Asenna SSH-demoni ja testaa se kirjautumalla SSH:lla
-awda
-
-# b) Automatisoi ssh-kirjautuminen julkisella avaimella
-dawda
-
-# c) Tee hei maailma ansiblella ja kokeile sitä SSH:n yli
-dwada
