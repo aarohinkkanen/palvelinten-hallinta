@@ -18,14 +18,14 @@ kun puolestaan muutosten jälkeen voimme ajaa helpomman komennon ansible all -a 
 
 # a) Asenna SSH-demoni ja testaa se kirjautumalla SSH:lla
 Ajoin Debianissa sudo apt-get update, jonka avulla varmistin, että järjestelmä on valmis latausta varten. 
-Latauksen suoritin komennolla sudo apt-get install ssh. Jotta sain ssh-yhteyden käynnistymään automaattisesti
+Latauksen suoritin komennolla sudo apt-get install -y ssh. Jotta sain ssh-yhteyden käynnistymään automaattisesti
 aina boottauksen yhteydessä, ajoin komennon sudo systemctl enable --now ssh.
-Lopuksi testasin vielä yhteyden onnistumisen ssh aaro@localhost komennolla.
+Lopuksi testasin vielä yhteyden onnistumisen ssh localhost komennolla.
 
 # b) Automatisoi ssh-kirjautuminen julkisella avaimella
 Jotta saan käyttööni julkisen avaimen käyttöön asensin sen komennolla ssh-keygen. Tämä generoi minulle julkisen avaimen. 
-Komennolla ssh-copy-id aaro@localhost kopion julkisen avaimen omalle palvelimelle (localhost). 
-Lopuksi testasin vielä kirjautumisen ssh aaro@localhost avulla ja pääsin sisään.
+Komennolla ssh-copy-id localhost kopion julkisen avaimen omalle palvelimelle (localhost). 
+Lopuksi testasin vielä kirjautumisen ssh localhost avulla ja pääsin sisään.
 
 # c) Tee hei maailma ansiblella ja kokeile sitä SSH:n yli
 Aloitin suorittamalla perinteisesti päivitykset komennolla sudo apt-get update ja sen jälkeen asensin ansiblen, micro-tekstieditorin,
