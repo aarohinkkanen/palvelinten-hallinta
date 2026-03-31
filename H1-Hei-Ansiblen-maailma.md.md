@@ -1,10 +1,10 @@
 # x) Lue ja tiivistä
 
 ## SSH public key – Login without password
-	- SSH on yleinen ja turvallinen tapa ottaa etäyhteys palvelimelle.
-	- Monet ohjelmistotuotteet käyttävät SSH niiden taustalla.
-	- SSH perustuu julkiseen ja yksityisen avainparin salaukseen.
-	- Julkisen avaimen voi kopioida niin, että SSH käyttää sitä automaattisesti.
+  - SSH on yleinen ja turvallinen tapa ottaa etäyhteys palvelimelle.
+  - Monet ohjelmistotuotteet käyttävät SSH:ta niiden taustalla.
+  - SSH perustuu julkiseen ja yksityisen avainparin salaukseen.
+  - Julkisen avaimen voi kopioida niin, että SSH käyttää sitä aina automaattisesti.
 Huomio: Oivallukseni on, että SSH:n hyödyntämä avainpari on paljon turvallisempi, kuin salasanat.
 
 ## Hello Ansible
