@@ -12,7 +12,136 @@ Yhteenvetona sudo avulla voidaan ajaa mitä vain.
 Ansiblella pystyy sudon automatisoidan kokonaan ilman salasanaa ja tämän mahdollistaa SSH avain. Määritykset laitetaan hakemistopolkuun roles/antero/tasks/main.yml. Sinne tekstitiedostoon tulee määritykset ja sen lisäksi site.yml tiedostoon lisäys become: true. Kaikki nämä ja muut määritykset ovat elin tärkeitä. Myös oikeuksien määrittäminen ja niissä pitää tietää, mitä tekee, jotta ei anna vääriä oikeuksia. Niillä voi olla merkittäviä seuraamuksia.
 Huomio: Oikeuksia määritellessä tulee tiedostaa tarkkaan mitä oikeuksia antaa ja toiminta logiikka on ymmärrettävä.
 
+## Ansible dokumentaatio
 
+### Ansible-doc copy 
+
+Tarkoituksena on kopioda tiedostoja tai hakemistoja koneelta toiselle.
+
+- content: Tiedoston sisältö
+- dest: Lähde hakemisto
+- src: Lähettäjän hakemisto
+- owner: Tiedoston omistaja
+- group: Ryhmät
+- mode: Oikeudet
+
+Malli:
+
+name: Kopioidaan tiedoston konfiguraatio ja asetetaan oikeudet
+
+Ansible.builtin.copy:
+
+  src: files/app.ini
+  
+  dest: /opt/myapp/app.ini
+  
+  owner: Teppo
+  
+  group: worker
+  
+  mode: "0644"
+
+
+
+### Ansible-doc apt
+
+Hallinnoi paketteja apt-järjestelmän avulla.
+
+- name: Paketin nimi
+- state: Paketin sen hetkinen tila
+- update_cache: Päivittää pakettivaraston
+
+Malli:
+
+name: Curl asennus ja pakettivaraston päivitys
+
+ansible.builtin.apt:
+
+  name: curl
+  
+  state: latest
+  
+  update_cache: yes
+
+
+
+### Ansible-doc file
+
+Tiedostojen ja hakemistojen hallinta
+
+- path: Tiedoston tai hakemiston polku
+- recurse: Oikeuksien rekursiivinen asettaminen
+- src: Linkin lähde
+- state: Tiedoston tila
+- owner: Omistaja
+- group: Ryhmä
+- mode: Oikeudet
+
+Malli:
+
+name: Luodaan hakemisto lokitiedostoille
+
+ansible.builtin.file:
+
+  path: /var/log/customapp
+  
+  state: directory
+  
+  owner: aaro
+  
+  group: leaders
+  
+  mode: "0750"
+
+
+
+### Ansible-doc user
+
+Voi lisätä, muokata tai poistaa käyttäjiä.
+
+- name: Käyttäjän nimi
+- create_home: Tekee kotihakemiston
+- comment: Käyttäjän kuvaus ja määritelmä
+- groups: Ryhmät
+- shell: Käyttäjän komentotulkki
+- state: Käyttäjän tila
+- system: Luo järjestelmäkäyttäjän
+
+Malli:
+
+name: Tehdään palvelukäyttäjä ilman kotihakemistoa
+
+ansible.builtin.user:
+
+  name: kayttaja1
+  
+  system: yes
+  
+  shell: /usr/sbin/nologin
+  
+  stete: present
+
+
+
+### Ansible-doc authorized_key
+
+Poistaa tai lisää käyttäjien julkisia SSH-avaimia.
+
+- user: Käyttäjä, jonka avain-tiedostoa muokataan
+- key: Itse julkinen SSH-avain
+
+Malli:
+
+name: Luodaan ylläpitäjän julkinen avain
+
+ansible.posix.authorized_key:
+
+  user: aaro
+  
+  state: present
+  
+  key: "{{ lookup('file', 'keys/admin_id_ed25519.pub') }}"
+  
 
 # a)
 Aluksi loin uuden käyttäjän ansaar ja tämän jälkeen lisäsin sen ryhmiin sudoless, sudo ja adm. Sain myös tulostettua echo komenolla tekstiä ilman, että sudo kysyy salasanaa. Tämä tapahtui, kun olin ottanut ssh yhteyden ansaar käyttäjälle. Tämä onnistui koska käyttäjä lisätiin ryhmiin, jotka eivät vaadi sudoa. 
@@ -26,7 +155,8 @@ Loin taas uuden käyttäjän anaaro, jolle annoin tismalleen samat oikeudet, kui
 <img width="1004" height="329" alt="image" src="https://github.com/user-attachments/assets/e96fc18a-d761-4b26-8039-ed0c9e5827d6" />
 
 # c)
-Asensin kaksi pakettia. Toinen oli curl ja toinen htop. Alla on kuva, missä näkyy main.yml sisältö joka playbookkia ajaessa asentaa molemmat paketit.
+Asensin kaksi pakettia. Toinen oli curl ja toinen htop. Alla on kuva, missä näkyy main.yml sisältö joka playbookkia ajaessa asentaa molemmat paketit. Paketit löysin Arch Linuxille tehdystä paketti galleriasta.
+
 <img width="635" height="311" alt="image" src="https://github.com/user-attachments/assets/2b6da917-6c7c-46ff-94ef-d9b8bdd2dc77" />
 <img width="1004" height="509" alt="image" src="https://github.com/user-attachments/assets/8bffd69a-c9fe-48d4-9244-a02152f60e32" />
 
@@ -41,7 +171,7 @@ Testasin ”service”  käskyä. Sen avulla loin automaattisen SSH-palvelun kä
 <img width="1004" height="164" alt="image" src="https://github.com/user-attachments/assets/ab493d71-1b2a-4ff0-9946-0b1ccad3a311" />
 
 # Lähteet
-- Ansible Community Documentation. Luettavissa:. Luettu: 7.4.2026
-- archlinux.org/packages/
-- Karvinen, Tero 2026. Passwordless Sudo with Ansible. Luettavissa:. Luettu: 6.4.2026
-- Karvinen, Tero 2026. Sudo without password. Luettavissa:. Luettu: 6.4.2026
+- Ansible Community Documentation. Luettavissa: https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/index.html. Luettu: 7.4.2026
+- Judd Vinet, Aaron Griffin & Levente Polyak 2002. Package Search. Luettavissa: https://archlinux.org/packages/. Luettu: 7.4.2026
+- Karvinen, Tero 2026. Passwordless Sudo with Ansible. Luettavissa: https://terokarvinen.com/passwordless-sudo-with-ansible/. Luettu: 7.4.2026
+- Karvinen, Tero 2026. Sudo without password. Luettavissa: https://terokarvinen.com/passwordless-sudo/. Luettu: 7.4.2026
