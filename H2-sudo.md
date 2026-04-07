@@ -11,6 +11,9 @@ Yhteenvetona sudo avulla voidaan ajaa mitä vain.
 ## Karvinen 2026
 Ansiblella pystyy sudon automatisoidan kokonaan ilman salasanaa ja tämän mahdollistaa SSH avain. Määritykset laitetaan hakemistopolkuun roles/antero/tasks/main.yml. Sinne tekstitiedostoon tulee määritykset ja sen lisäksi site.yml tiedostoon lisäys become: true. Kaikki nämä ja muut määritykset ovat elin tärkeitä. Myös oikeuksien määrittäminen ja niissä pitää tietää, mitä tekee, jotta ei anna vääriä oikeuksia. Niillä voi olla merkittäviä seuraamuksia.
 Huomio: Oikeuksia määritellessä tulee tiedostaa tarkkaan mitä oikeuksia antaa ja toiminta logiikka on ymmärrettävä.
+
+
+
 # a)
 Aluksi loin uuden käyttäjän ansaar ja tämän jälkeen lisäsin sen ryhmiin sudoless, sudo ja adm. Sain myös tulostettua echo komenolla tekstiä ilman, että sudo kysyy salasanaa. Tämä tapahtui, kun olin ottanut ssh yhteyden ansaar käyttäjälle. Tämä onnistui koska käyttäjä lisätiin ryhmiin, jotka eivät vaadi sudoa. 
 <img width="1004" height="564" alt="image" src="https://github.com/user-attachments/assets/0a18e99c-cf7d-4f55-9c3a-051a9131e2e9" />
@@ -38,7 +41,7 @@ Testasin ”service”  käskyä. Sen avulla loin automaattisen SSH-palvelun kä
 <img width="1004" height="164" alt="image" src="https://github.com/user-attachments/assets/ab493d71-1b2a-4ff0-9946-0b1ccad3a311" />
 
 # Lähteet
-Ansible Community Documentation. Luettavissa:. Luettu: 7.4.2026
-archlinux.org/packages/
-Karvinen, Tero 2026. Passwordless Sudo with Ansible. Luettavissa:. Luettu: 6.4.2026
-Karvinen, Tero 2026. Sudo without password. Luettavissa:. Luettu: 6.4.2026
+- Ansible Community Documentation. Luettavissa:. Luettu: 7.4.2026
+- archlinux.org/packages/
+- Karvinen, Tero 2026. Passwordless Sudo with Ansible. Luettavissa:. Luettu: 6.4.2026
+- Karvinen, Tero 2026. Sudo without password. Luettavissa:. Luettu: 6.4.2026
