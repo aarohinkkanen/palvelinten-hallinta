@@ -106,4 +106,5 @@ Lopuksi testasin vielä toimiiko sivu playbookin ajon jälkeen ja toimi.
 
 ## Lähteet
 - Ansible Community Documentation. s.a. Handlers: running operations on change. Luettavissa: https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html. Luettu: 13.4.2026
-- Karvinen, T. 2026. Apache installed with Ansible - quick notes. Luettavissa: https://terokarvinen.com/apache-ansible/. Luettu: 11.4.2026
+- Karvinen, Tero. 2026. Apache installed with Ansible - quick notes. Luettavissa: https://terokarvinen.com/apache-ansible/. Luettu: 11.4.2026
+- Karvinen, Tero 2026. Sudo without password. Luettavissa: https://terokarvinen.com/passwordless-sudo/. Luettu: 11.4.2026
