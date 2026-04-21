@@ -110,6 +110,7 @@ Idempotentti todennus onnistui kun ajoin uudestaan ansible-playbookin.
 
 
 ## Lähteet
+- Karvinen, T. 2026. Apache installed with Ansible - quick notes. Luettavissa: https://terokarvinen.com/apache-ansible/. Luettu: 11.4.2026
 - Karvinen, T. 2023. Configuration Management of Distributed Systems over Unreliable and Hostile Networks. Sivut 112-117. Luettavissa: https://westminsterresearch.westminster.ac.uk/download/4cc417566aa9af60fe3826d690719e390abdb7a3c8672f3d51b1eb4ca75e7624/1427236/karvinen-2023-configuration-management-of-distributed-systems.pdf. Luettu: 21.4.2026
 
 
