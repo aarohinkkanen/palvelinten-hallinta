@@ -24,16 +24,16 @@
 - Huomio: Mielenkiintoinen rakenne, jossa execin ja filen päälle rakentuu muut tärkeätkin funktiot, kuten package, service, user ja group.
 
 ## a)
-Aloitin päivittämällä järjestelmäni komenolla sudo apt update.
+Aloitin päivittämällä järjestelmäni komenolla ´´´´sudo apt update´´´´.
 <img width="1004" height="235" alt="image" src="https://github.com/user-attachments/assets/ebf8052e-23c4-4356-b1c6-3fcc11dbda8f" />
 
-Sitten asensin Caddy nimisen verkkopalvelimen komennolla sudo apt install caddy.
+Sitten asensin Caddy nimisen verkkopalvelimen komennolla ´´´´sudo apt install caddy´´´´.
 <img width="1004" height="525" alt="image" src="https://github.com/user-attachments/assets/b0c33625-5b29-4f0f-9f0f-1cebd2ed7dab" />
 
-Koska minulla oli apache2 päällä ja se kuunteli porttia 80, niin en pystynyt saamaan aluksi Caddy:a päällä, mutta lopetin apache2 palvelun komennolla sudo systemctl stop apache2. Tämän jälkeen kun ajoin komennon sudo systemctl start caddy ja sen perään sudo systemctl status caddy niin huomasin, että se toimii.
+Koska minulla oli apache2 päällä ja se kuunteli porttia 80, niin en pystynyt saamaan aluksi Caddy:a päällä, mutta lopetin apache2 palvelun komennolla ´´´´sudo systemctl stop apache2´´´´. Tämän jälkeen kun ajoin komennon ´´´´sudo systemctl start caddy´´´´ ja sen perään ´´´´sudo systemctl status caddy´´´´ niin huomasin, että se toimii.
 <img width="1004" height="403" alt="image" src="https://github.com/user-attachments/assets/5c112402-597c-49d8-9238-87ee79567149" />
 
-Varmistin vielä tämän menemällä selaimeen ja ottamalla yhteyden omaan localhostiin eli http://localhost ja sain onnistuneen tuloksen.
+Varmistin vielä tämän menemällä selaimeen ja ottamalla yhteyden omaan localhostiin eli ´´´´http://localhost´´´´ ja sain onnistuneen tuloksen.
 <img width="1004" height="523" alt="image" src="https://github.com/user-attachments/assets/b5ea4727-204d-4936-9dab-999a3c0c479f" />
 
 ## b)
