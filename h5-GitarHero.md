@@ -111,6 +111,10 @@ Playbookin ajo onnistui ja sen jälkeen suoritin terminaalissa komennot git add 
 Pari hankittu!
 
 
+## Lähteet
+- Chacon, S. Straub, B. 2014. Pro Git 2nd Edition. Apross. New York City. Luku 1.3. Luettavissa: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F. Luettu: 23.4.2026.
+
+
 
 
 
