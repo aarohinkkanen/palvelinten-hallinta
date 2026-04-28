@@ -73,7 +73,7 @@ Tässä tein harjoitus mielessä turha.txt tekstitiedoston, joka sisälsi teksti
 
 
 ## d) Tukki
-Repositoryn lokeja voi tarkastella helposti komennolla  git log --patch . Siinä näkee selkeästi eri tietoja. Jokainen commit tulee näkyviin lokeihin ja tiedot päivittyvät aina niiden mukaisiksi, mitä muutokset sisältävät. Alla eroteltu lokistani malliksi.
+Repositoryn lokeja voi tarkastella helposti komennolla git log --patch . Siinä näkee selkeästi eri tietoja. Jokainen commit tulee näkyviin lokeihin ja tiedot päivittyvät aina niiden mukaisiksi, mitä muutokset sisältävät. Alla eroteltu lokistani malliksi.
 
 -	Siinä näkee tekijän, joka tässä tapauksessa olin minä itse eli Aaro Hinkkanen aaro.hinkkanen@gmail.com. 
 -	Päiväyksen näkee: torstai 23.4.2026 klo 21:27:58 +0300
@@ -106,6 +106,9 @@ Playbookin ajo onnistui ja sen jälkeen suoritin terminaalissa komennot git add 
 <img width="1004" height="214" alt="image" src="https://github.com/user-attachments/assets/ecf1398f-3ef3-44d3-a683-6924856fa820" />
 <img width="1004" height="328" alt="image" src="https://github.com/user-attachments/assets/7ed7b56d-b337-4226-815e-2c7da7ead3eb" />
 
+
+## f) 
+Pari hankittu!
 
 
 
