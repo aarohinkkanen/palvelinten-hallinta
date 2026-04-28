@@ -78,7 +78,7 @@ Repositoryn lokeja voi tarkastella helposti komennolla git log --patch . Siinä 
 -	Siinä näkee tekijän, joka tässä tapauksessa olin minä itse eli Aaro Hinkkanen aaro.hinkkanen@gmail.com. 
 -	Päiväyksen näkee: torstai 23.4.2026 klo 21:27:58 +0300
 -	Viestin, jonka kirjoitin muutoksen kuvaukseksi eli nyt ”First changes for this repo!”
--	Mitä konkreettisesti muutokset sisältävät. Tässä tapauksessa seitsemän riviä samaa tekstiä  TESTI!!!
+-	Mitä konkreettisesti muutokset sisältävät. Tässä tapauksessa seitsemän riviä samaa tekstiä TESTI!!!
 
 
 <img width="1004" height="1159" alt="image" src="https://github.com/user-attachments/assets/ea9f6987-9117-4540-bd96-c0127bdc0340" />
